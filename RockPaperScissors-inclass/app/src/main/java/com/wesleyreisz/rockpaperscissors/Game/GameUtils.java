@@ -37,29 +37,45 @@ public class GameUtils {
 
         //TODO: Create some logic to evaluate winner.
         switch(playerSelectedChoice){
+            //if player selects rock
             case R.id.btnRock:
+                //Rock TIES Rock
                 if(computerSelectedChoice == R.id.btnRock)
                     return GameUtils.TIES;
+                //Rock LOSES TO Paper
                 else if(computerSelectedChoice == R.id.btnPaper)
                     return GameUtils.LOSES_TO;
+                //Rock BEATS Scissors
                 else if(computerSelectedChoice == R.id.btnScissors)
                     return GameUtils.BEATS;
-            case R.id.btnPaper:
-                if(computerSelectedChoice == R.id.btnRock)
-                    return GameUtils.BEATS;
-                else if(computerSelectedChoice == R.id.btnPaper)
-                    return GameUtils.TIES;
-                else if(computerSelectedChoice == R.id.btnScissors)
-                    return GameUtils.LOSES_TO;
+                break;
 
+            //if player selects paper
+            case R.id.btnPaper:
+                //Paper BEATS Rock
+                if(computerSelectedChoice == R.id.btnRock)
+                    return GameUtils.BEATS;
+                //Paper TIES Paper
+                else if(computerSelectedChoice == R.id.btnPaper)
+                    return GameUtils.TIES;
+                //Paper LOSES TO Scissors
+                else if(computerSelectedChoice == R.id.btnScissors)
+                    return GameUtils.LOSES_TO;
+                break;
+
+            //if player selects scissors
             case R.id.btnScissors:
+                //Scissors LOSES TO Rock
                 if(computerSelectedChoice == R.id.btnRock)
                     return GameUtils.LOSES_TO;
+                //Scissors BEATS Paper
                 else if(computerSelectedChoice == R.id.btnPaper)
                     return GameUtils.BEATS;
+                //Scissors TIES Scissors
                 else if(computerSelectedChoice == R.id.btnScissors)
                     return GameUtils.TIES;
-        }
+                break;
+        }//END switch
 
 
         /*
