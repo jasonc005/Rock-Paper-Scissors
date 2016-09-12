@@ -35,10 +35,31 @@ public class GameUtils {
         R.id.btnPaper;
         */
 
-
-
         //TODO: Create some logic to evaluate winner.
-        
+        switch(playerSelectedChoice){
+            case R.id.btnRock:
+                if(computerSelectedChoice == R.id.btnRock)
+                    return GameUtils.TIES;
+                else if(computerSelectedChoice == R.id.btnPaper)
+                    return GameUtils.LOSES_TO;
+                else if(computerSelectedChoice == R.id.btnScissors)
+                    return GameUtils.BEATS;
+            case R.id.btnPaper:
+                if(computerSelectedChoice == R.id.btnRock)
+                    return GameUtils.BEATS;
+                else if(computerSelectedChoice == R.id.btnPaper)
+                    return GameUtils.TIES;
+                else if(computerSelectedChoice == R.id.btnScissors)
+                    return GameUtils.LOSES_TO;
+
+            case R.id.btnScissors:
+                if(computerSelectedChoice == R.id.btnRock)
+                    return GameUtils.LOSES_TO;
+                else if(computerSelectedChoice == R.id.btnPaper)
+                    return GameUtils.BEATS;
+                else if(computerSelectedChoice == R.id.btnScissors)
+                    return GameUtils.TIES;
+        }
 
 
         /*
